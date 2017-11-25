@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layLoginField"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-90dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtAccount"
+            style="@style/edit_login"
+            android:drawableLeft="@drawable/user"
+            android:hint="User"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/edtPassword"
+            style="@style/edit_login"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@drawable/locked"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/btn_login"
+        android:layout_marginTop="35dp"
+        android:text="log in"
+        android:textSize="23sp"
+        android:background="@drawable/login_btn2"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/txtFgtPwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="忘記密碼？"
+            android:textSize="17sp"
+            android:textColor="@color/blue1"/>
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="註冊！"
+            android:textSize="17sp"
+            android:textColor="@color/blue1"/>
+    </LinearLayout>
+
+    <!--
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/txtFgtPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="忘記密碼？"
+            android:textSize="15sp"
+            android:textColor="@color/blue1"/>
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="註冊！"
+            android:textSize="15sp"
+            android:textColor="@color/blue1"/>
+    </RelativeLayout>
+    -->
+
+</LinearLayout>

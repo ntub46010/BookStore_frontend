@@ -1,0 +1,20 @@
+<resources>
+    <!--<dimen name="app_bar_height">250dp</dimen>-->
+    <dimen name="fab_margin">16dp</dimen>
+    <!--<dimen name="text_margin">16dp</dimen>-->
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">5dp</dimen>
+    <dimen name="activity_vertical_margin">10dp</dimen>
+
+    <!-- 卡片尺寸設定 -->
+    <dimen name="spaceVertical">6dp</dimen>
+    <dimen name="cardCornerRadius">0dp</dimen>
+    
+    <dimen name="card_book_img_width">135dp</dimen>
+    <dimen name="card_book_img_height">180dp</dimen>
+
+    <dimen name="setting_section_line_padding">15dp</dimen>
+
+    <dimen name="menuTextSize">18dp</dimen>
+</resources>

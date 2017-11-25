@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp">
+
+        <TableRow>
+            <TextView
+                style="@style/txt_goods_detail_title"
+                android:text="書名："/>
+            <EditText
+                android:id="@+id/edtTitle"
+                style="@style/edt_goods_post_content"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/txt_goods_detail_title"
+                android:layout_marginTop="4dp"
+                android:text="分類："/>
+            <LinearLayout
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <CheckBox
+                        android:id="@+id/chkAI"
+                        style="@style/chk_goods_dep"
+                        android:text="會資"/>
+                    <CheckBox
+                        android:id="@+id/chkFN"
+                        style="@style/chk_goods_dep"
+                        android:text="財金"/>
+                    <CheckBox
+                        android:id="@+id/chkFT"
+                        style="@style/chk_goods_dep"
+                        android:text="財稅"/>
+                    <CheckBox
+                        android:id="@+id/chkIB"
+                        style="@style/chk_goods_dep"
+                        android:text="國商"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <CheckBox
+                        android:id="@+id/chkBM"
+                        style="@style/chk_goods_dep"
+                        android:text="企管"/>
+                    <CheckBox
+                        android:id="@+id/chkIM"
+                        style="@style/chk_goods_dep"
+                        android:text="資管"/>
+                    <CheckBox
+                        android:id="@+id/chkAF"
+                        style="@style/chk_goods_dep"
+                        android:text="應外"/>
+                    <CheckBox
+                        android:id="@+id/chkCD"
+                        style="@style/chk_goods_dep"
+                        android:text="商設"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <CheckBox
+                        android:id="@+id/chkCC"
+                        style="@style/chk_goods_dep"
+                        android:text="商創"/>
+                    <CheckBox
+                        android:id="@+id/chkDM"
+                        style="@style/chk_goods_dep"
+                        android:text="數媒"/>
+                    <CheckBox
+                        android:id="@+id/chkGN"
+                        style="@style/chk_goods_dep"
+                        android:text="通識"/>
+                </LinearLayout>
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/txt_goods_detail_title"
+                android:text="書況："/>
+            <EditText
+                android:id="@+id/edtStatus"
+                style="@style/edt_goods_post_content"
+                android:hint="如幾成新、使用情形"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/txt_goods_detail_title"
+                android:text="筆記："/>
+            <Spinner
+                android:id="@+id/spnNote"
+                android:layout_width="280dp"
+                android:layout_height="32dp"
+                android:entries="@array/book_note_condition"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/txt_goods_detail_title"
+                android:text="價格："/>
+            <EditText
+                android:id="@+id/edtPrice"
+                style="@style/edt_goods_post_content"
+                android:inputType="number"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/txt_goods_detail_title"
+                android:text="備註："/>
+            <EditText
+                android:id="@+id/edtPS"
+                style="@style/edt_goods_post_content"
+                android:hint="如授課老師、課程評價或其他事情"/>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

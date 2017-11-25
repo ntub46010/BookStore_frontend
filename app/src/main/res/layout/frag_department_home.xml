@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnDepAI"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/calculator3"
+                    android:text="會資系"/>
+
+                <Button
+                    android:id="@+id/btnDepFT"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/change2"
+                    android:text="財稅系"/>
+
+                <Button
+                    android:id="@+id/btnDepBM"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/graph2"
+                    android:text="企管系"/>
+
+                <Button
+                    android:id="@+id/btnDepAFL"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/translation2"
+                    android:text="應外系"/>
+
+                <Button
+                    android:id="@+id/btnDepCC"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/idea2"
+                    android:text="商創系"/>
+
+                <Button
+                    android:id="@+id/btnDepGN"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/openbook"
+                    android:text="通識"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnDepFN"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/bank2"
+                    android:text="財金系"/>
+
+                <Button
+                    android:id="@+id/btnDepIB"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/team2"
+                    android:text="國商系"/>
+
+                <Button
+                    android:id="@+id/btnDepIM"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/programmer2"
+                    android:text="資管系"/>
+
+                <Button
+                    android:id="@+id/btnDepCD"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/palette"
+                    android:text="商設系"/>
+
+                <Button
+                    android:id="@+id/btnDepDM"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/playbtn2"
+                    android:text="數媒系"/>
+
+                <Button
+                    android:id="@+id/btnDepAll"
+                    style="@style/btnDep"
+                    android:drawableTop="@drawable/star3"
+                    android:text="全部"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

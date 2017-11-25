@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout android:id="@+id/linear"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.xy.psn.MainActivity">
+
+    <include layout="@layout/content_product_display"
+        android:paddingBottom="35dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_top"
+        style="@style/fab"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_arrow_upward"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add"
+        style="@style/fab"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="80dp"
+        android:src="@drawable/icon_book_add"/>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:fitsSystemWindows="true"
+    tools:context="com.xy.psn.product.ProductDetailActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recy_books"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/txtBookDetailTitle"
+                style="@style/txt_goods_detail_title"
+                android:layout_marginBottom="10dp"
+                android:textSize="25sp"
+                android:text="書名書名書名書名書名書名書名書名"/>
+
+            <TextView
+                android:id="@+id/txtBookDetailPrice"
+                style="@style/txt_goods_detail_content"
+                android:layout_marginBottom="12dp"
+                android:text="$ 1,234"
+                android:textSize="23sp"
+                android:textColor="#EE0000"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingEnd="5dp">
+                <TextView
+                    android:id="@+id/txtPostDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="00/00/00  00:00 刊登"/>
+                <TextView
+                    android:id="@+id/txtEditDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtPostDate"
+                    android:layout_alignParentEnd="true"
+                    android:text="00/00/00  00:00 編輯"/>
+            </RelativeLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:background="@drawable/bg_square_gray">
+                <TableRow
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        style="@style/txt_goods_detail_title"
+                        android:text="科系："/>
+                    <TextView
+                        android:id="@+id/txtBookDep"
+                        style="@style/txt_goods_detail_content"
+                        android:text="x"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        style="@style/txt_goods_detail_title"
+                        android:text="編號："/>
+                    <TextView
+                        android:id="@+id/txtBookDetailId"
+                        style="@style/txt_goods_detail_content"
+                        android:text="x"/>
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        style="@style/txt_goods_detail_title"
+                        android:text="書況："/>
+                    <TextView
+                        android:id="@+id/txtBookDetailStatus"
+                        style="@style/txt_goods_detail_content"
+                        android:text="x"/>
+                </LinearLayout>
+
+                <TableRow
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        style="@style/txt_goods_detail_title"
+                        android:text="筆記："/>
+                    <TextView
+                        android:id="@+id/txtBookDetailNote"
+                        style="@style/txt_goods_detail_content"
+                        android:text="x"/>
+                </TableRow>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        style="@style/txt_goods_detail_title"
+                        android:layout_width="wrap_content"
+                        android:text="備註："/>
+                    <TextView
+                        android:id="@+id/txtBookDetailPS"
+                        style="@style/txt_goods_detail_content"
+                        android:text="xxxxxccc"/>
+                </LinearLayout>
+
+                <TableRow
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        style="@style/txt_goods_detail_title"
+                        android:text="賣家："/>
+                    <TextView
+                        android:id="@+id/txtBookDetailSeller"
+                        style="@style/txt_goods_detail_content"
+                        android:text="x"
+                        android:textColor="#0000ff"/>
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

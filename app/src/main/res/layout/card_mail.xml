@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 設計一張卡片版型 -->
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    card_view:cardCornerRadius="@dimen/cardCornerRadius">
+
+    <LinearLayout
+        android:id="@+id/layMailCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="80dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/no_image"
+            android:background="#FFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp"
+                android:paddingEnd="0dp">
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="3dp"
+                    android:text="x"
+                    android:textSize="17sp"
+                    android:textColor="#000000"/>
+                <TextView
+                    android:id="@+id/txtPreviewMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:layout_marginBottom="7dp"
+                    android:paddingStart="5dp"
+                    android:lineSpacingExtra="@dimen/spaceVertical"
+                    android:text="x"
+                    android:textSize="15sp"
+                    android:textColor="#444444"
+                    android:maxLines="3"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtDatetime"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:text="00/00  00:00"/>
+            <!--
+            <ImageView
+                android:id="@+id/btnDelete"
+                android:layout_width="24.5dp"
+                android:layout_height="21dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="end"
+                android:src="@drawable/icon_delete"
+                android:scaleType="centerInside"/>
+            -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

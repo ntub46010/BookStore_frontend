@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 設計一張卡片版型 -->
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="6dp"
+    card_view:cardCornerRadius="5dp">
+
+    <RelativeLayout
+        android:id="@+id/layChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="3dp"
+        android:background="@color/card_chat_right_back">
+        <ImageView
+            android:id="@+id/imgAvatar"
+            style="@style/img_chat_avatar_right"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/no_image"/>
+        <TextView
+            android:id="@+id/txtDatetime"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="end"
+            android:textSize="13sp"
+            android:text="17:04"/>
+        <TextView
+            android:id="@+id/txtMsg"
+            style="@style/txt_chat_msg_left"
+            android:layout_toStartOf="@id/imgAvatar"
+            android:layout_below="@id/txtDatetime"/>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

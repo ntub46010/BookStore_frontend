@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layProductSummaryList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:foreground="?android:attr/selectableItemBackground">
+        <ImageView
+            android:id="@+id/imgBookSummaryPic"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:background="#ffffff"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="10dp">
+            <TextView
+                android:id="@+id/txtBookSummaryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingTop="6dp"
+                android:gravity="center_vertical"
+                android:text="x"
+                android:textSize="19sp"
+                android:textColor="#000000"
+                android:maxLines="1"/>
+            <TextView
+                android:id="@+id/txtBookSummaryPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:paddingBottom="6dp"
+                android:gravity="center_vertical"
+                android:text="$ x"
+                android:textSize="19sp"
+                android:textColor="#FF0000"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

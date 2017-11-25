@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ff000000</color>
+    <color name="windowBackground">#FFFFFF</color>
+
+    <!--fab、ProgressBar顏色-->
+    <color name="colorAccent">#FF7C80</color> <!--#C98ED8-->
+
+    <color name="bg_header">#d95f2f</color>
+    <color name="bg_body_normal">@color/red2</color>
+    <color name="tabUnderline">#FAB85F</color>
+
+    <color name="card_product">#C0ff7751</color> <!--#FFDEDE-->
+    <color name="card_mail">#C9EDAB</color>
+    <color name="card_favorite">#ccecE5</color> <!--#CCECE5-->
+
+    <color name="card_chat_left_back">#CFC9C7</color>
+    <color name="card_chat_right_back">#C0ff7751</color><!--#9CC4E7-->
+
+    <color name="lst_stock">#FAFAFA</color><!--商品管理清單-->
+
+    <color name="searchview_text">#FFFFFF</color>
+    <color name="searchview_hint">#80FFFFFF</color>
+
+    <color name="bg_gridview_plain">#00FAFAFA</color>
+    <color name="bg_gridview_press">#80FF7C80</color>
+
+    <color name="red1">#ff7751</color>
+    <color name="red2">#C0EDBCB6</color>
+    <color name="red3">#ed7a70</color>
+
+    <color name="blue1">#387498</color><!--註冊、忘記密碼-->
+
+</resources>

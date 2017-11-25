@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#e7f4dd"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.xy.psn.member.MemberChatActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/toolbar"
+        app:titleTextColor="#FFFFFF">
+        <TextView
+            android:id="@+id/txtToolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/btnGoodsInfo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/icon_product_detail"
+                android:layout_alignParentEnd="true"/>
+            <ImageView
+                android:id="@+id/btnMemberProfile"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:paddingTop="3dp"
+                android:src="@drawable/icon_member_profile"
+                android:layout_toStartOf="@id/btnGoodsInfo"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:id="@+id/layChatroom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/layMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:layout_alignParentBottom="true"
+                android:background="#bdeab1">
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="55dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="2.3dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_alignParentEnd="true"
+                    android:text="送出"
+                    android:textSize="18sp"
+                    android:background="#cccccc"/>
+                <EditText
+                    android:id="@+id/edtMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="1dp"
+                    android:paddingStart="3dp"
+                    android:paddingEnd="1.5dp"
+                    android:paddingTop="2.8dp"
+                    android:paddingBottom="2.8dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toStartOf="@id/btnSubmit"
+                    android:background="@drawable/bd_message"
+                    android:maxLines="2">
+                </EditText>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#EEEEEE">
+
+                <FrameLayout
+                    android:id="@+id/layGoods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#EEEEEE">
+                    <Spinner
+                        android:id="@+id/spnProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <ProgressBar
+                        android:id="@+id/prgBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        style="?android:attr/progressBarStyleSmall"/>
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/lineGoods"
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#1a1818"
+                    android:layout_marginTop="0dp"/>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/layMsg"
+                android:layout_below="@id/layInfo">
+                <!-- 加入RecycleView, 用來放置多張CardView -->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recy_chats"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <ProgressBar
+                    android:id="@+id/prgChat"
+                    style="@style/prg_medium"/>
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/layGoodsDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ccFFFFFF"
+            android:visibility="visible">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+                <include layout="@layout/content_product_detail"/>
+            </ScrollView>
+
+            <!--<include layout="@layout/content_product_detail"/>-->
+
+            <include layout="@layout/content_not_found" />
+
+            <ProgressBar
+                android:id="@+id/prgDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"/>
+
+        </FrameLayout>
+    </FrameLayout>
+
+</RelativeLayout>
