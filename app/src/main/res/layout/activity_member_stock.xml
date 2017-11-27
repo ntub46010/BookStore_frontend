@@ -22,10 +22,18 @@
             android:layout_height="match_parent"
             android:layout_below="@id/toolbar">
 
-            <ListView
-                android:id="@+id/lstProduct"
+            <view
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                class="android.support.v4.widget.SwipeRefreshLayout"
+                android:id="@+id/swipeRefreshLayout"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"/>
+                android:layout_height="match_parent"
+                android:enabled="false">
+                <ListView
+                    android:id="@+id/lstProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </view>
 
             <include layout="@layout/content_not_found" />
 

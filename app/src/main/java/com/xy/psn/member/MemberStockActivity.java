@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -45,6 +46,7 @@ public class MemberStockActivity extends AppCompatActivity {
     private TextView txtNotFound;
     private ArrayList<ImageObj> products;
     public static StockListAdapter stockAdapter = null;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private String bookId, bookTitle;
     private MyAsyncTask[] tasks = new MyAsyncTask[2];
     private ProgressBar prgBar;
@@ -68,9 +70,20 @@ public class MemberStockActivity extends AppCompatActivity {
         });
 
         prgBar = (ProgressBar) findViewById(R.id.prgBar);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
         txtNotFound = (TextView) findViewById(R.id.txtNotFound);
         imgNotFound = (ImageView) findViewById(R.id.imgNotFound);
         imgNotFound.setVisibility(View.GONE);
+
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_light);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if(canShowShelf) {
+                    loadStockData();
+                }
+            }
+        });
 
         prepareDialog();
         lstProduct = (ListView) findViewById(R.id.lstProduct);
@@ -142,6 +155,7 @@ public class MemberStockActivity extends AppCompatActivity {
         //Toast.makeText(context, "載入庫存", Toast.LENGTH_SHORT).show();
         if (canShowShelf) {
             canShowShelf = false;
+            swipeRefreshLayout.setEnabled(false);
             prgBar.setVisibility(View.VISIBLE);
             lstProduct.setVisibility(View.GONE);
 
@@ -201,6 +215,9 @@ public class MemberStockActivity extends AppCompatActivity {
             stockAdapter.setBackgroundColor(getResources(), R.color.lst_stock);
             lstProduct.setAdapter(stockAdapter);
             registerForContextMenu(lstProduct);
+
+            swipeRefreshLayout.setEnabled(true);
+            swipeRefreshLayout.setRefreshing(false);
 
             if (products.isEmpty()) {
                 txtNotFound.setText("沒有上架商品");

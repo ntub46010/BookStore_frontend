@@ -29,6 +29,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import static com.xy.psn.MainActivity.lastPosition;
 import static com.xy.psn.boardcast_helper.beans.custom.UserData.DATABASE_USERS;
 //import static com.xy.psn.data.MyHelper.code;
@@ -375,15 +378,18 @@ public class LoginActivity extends AppCompatActivity{
                 layRegisterField.setVisibility(View.VISIBLE);
             }
         });
-        //記得測試輸入&符號以干擾URL
-        myAsyncTask.execute(getString(R.string.register_link,
+
+        try {
+            myAsyncTask.execute(getString(R.string.register_link,
                 acc,
                 convertToMD5(pwd),
-                name,
+                URLEncoder.encode(name, "UTF-8"),
                 email,
                 gender,
                 department
-        ));
+            ));
+        }catch (UnsupportedEncodingException e) {}
+
     }
 
     @Override

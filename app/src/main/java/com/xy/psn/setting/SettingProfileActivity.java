@@ -451,7 +451,7 @@ public class SettingProfileActivity extends AppCompatActivity {
                     Toast.makeText(context, "UnsupportedEncodingException @", Toast.LENGTH_SHORT).show();
                 }
             }else {
-                Toast.makeText(context, "正在更新大頭貼，這會多花點時間", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "正在更新大頭貼，可能會多花點時間", Toast.LENGTH_SHORT).show();
                 new Thread(new Runnable() {
                     public void run() {
                         imageTask = new ImageUploadTask(context, getString(R.string.upload_avatar_link, loginUserId));
