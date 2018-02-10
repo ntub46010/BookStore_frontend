@@ -12,7 +12,7 @@
 
 ## 首頁
 主程式：MainActivity、DepartmentFrag、ProductHomeFrag、MemberHomeFrag、SettingFrag<br>
-說明：由4個Fragment呈現主要功能，可左右滑動切換。點選各個科系能查看該分類的商品。商品首頁上方的放大鏡按鈕是搜尋功能。
+說明：由4個Fragment呈現主要功能，可左右滑動切換。點選各個科系能查看該分類的商品。商品首頁上方的放大鏡圖案是搜尋功能。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%A7%91%E7%B3%BB.png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E9%A6%96%E9%A0%81.png" height="24%" width="24%" />
@@ -41,7 +41,7 @@
 
 ## 商品詳情
 主程式：ProductDetailActivity<br>
-說明：顯示商品詳細資料，並可放大圖片。點擊愛心圖案會加入我的最愛，供日後查看。點擊信封圖案會開啟交談室，以聯絡賣家。
+說明：顯示商品詳細資料，可放大圖片。點擊愛心圖案會加入最愛，供日後查看。點擊信封圖案會開啟交談室，以聯絡賣家。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%851.png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%852.png" height="24%" width="24%" />
@@ -69,7 +69,7 @@
 
 ## 交談室
 主程式：MemberChatActivity<br>
-說明：買賣雙方對話的地方，在此洽談交易事宜。點擊中上方選單可切換到其他談過的商品。點擊右上方人形按鈕開啟對方個人檔案。點擊包裝袋圖案則出現半透明背景的商品詳情。
+說明：買賣雙方對話的地方，在此洽談交易事宜。點擊中上方選單可切換到其他談過的商品。點擊右上方人形圖案開啟對方個人檔案。點擊包裝袋圖案則出現半透明背景的商品詳情。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E4%BA%A4%E8%AB%87%E5%AE%A41.png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E4%BA%A4%E8%AB%87%E5%AE%A4(%E7%9C%8B%E5%95%86%E5%93%81).png" height="24%" width="24%" />
@@ -86,7 +86,7 @@
 
 ## 商品管理
 主程式：MemberStockActivity<br>
-說明：對自己刊登的商品進行查看、編輯與下架的操作。其中編輯功能可追加、移動或移除圖片。下架功能使該商品不會再被搜尋到。
+說明：對自己刊登的商品進行查看、編輯與下架的操作。其中編輯功能可追加、移動或移除圖片。下架功能使該商品不會再被搜尋到，但仍可在交談室中被檢視。
 
 ### 選項
 <table>
@@ -102,7 +102,7 @@
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%85(%E7%B7%A8%E8%BC%AF%E5%BE%8C).png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%95%86%E5%93%81(%E5%8B%95%E5%9C%96%E7%89%87).png" height="24%" width="24%" />
 </td></tr>
-</table><
+</table>
 
 ### 下架
 <table>
@@ -114,7 +114,7 @@
 
 ## 帳號設定
 主程式：SettingProfileActivity<br>
-說明：編輯個人基本資料，如姓名、科系、Email、大頭照與登入密碼。
+說明：編輯個人基本資料，包含姓名、科系、Email、大頭照與登入密碼。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E8%B5%B7%E5%88%9D).png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E5%AF%86%E7%A2%BC%E9%8C%AF%E8%AA%A4).png" height="24%" width="24%" />
