@@ -37,9 +37,9 @@ public class MemberFavoriteActivity extends AppCompatActivity {
     private ImageView imgNotFound;
     private TextView txtNotFound;
     private ArrayList<ImageObj> books;
-    private ProductDisplayAdapter myAdapter;
+    private ProductDisplayAdapter adapter;
     private MyAsyncTask productTask;
-    private ProgressBar progressBar;
+    private ProgressBar prgBar;
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
@@ -69,7 +69,7 @@ public class MemberFavoriteActivity extends AppCompatActivity {
             }
         });
 
-        progressBar = (ProgressBar) findViewById(R.id.prgBar);
+        prgBar = (ProgressBar) findViewById(R.id.prgBar);
         txtNotFound = (TextView) findViewById(R.id.txtNotFound);
         imgNotFound = (ImageView) findViewById(R.id.imgNotFound);
         txtNotFound.setVisibility(View.GONE);
@@ -89,8 +89,8 @@ public class MemberFavoriteActivity extends AppCompatActivity {
         isProductDisplayAlive = false;
 
         try { //注意：回到桌面也會執行這裡，而停止執行緒
-            myAdapter.setCanCheckLoop(false);
-            myAdapter.initCheckThread(false);
+            adapter.setCanCheckLoop(false);
+            adapter.initCheckThread(false);
         }catch (NullPointerException e) {
             //第一次開啟，adapter尚未準備好
         }
@@ -110,7 +110,7 @@ public class MemberFavoriteActivity extends AppCompatActivity {
             //Toast.makeText(context, "載入最愛", Toast.LENGTH_SHORT).show();
             canShowFavorite = false;
             swipeRefreshLayout.setEnabled(false);
-            progressBar.setVisibility(View.VISIBLE);
+            prgBar.setVisibility(View.VISIBLE);
             // 產生將顯示的資料
             books = new ArrayList<>();
 
@@ -174,11 +174,11 @@ public class MemberFavoriteActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(linearLayoutManager);
 
             // 產生一個 MyAdapter物件, 連結將加入的資料
-            myAdapter = new ProductDisplayAdapter(context, books);
-            myAdapter.setBackgroundColor(getResources(), R.color.card_favorite);
+            adapter = new ProductDisplayAdapter(context, books);
+            adapter.setBackgroundColor(getResources(), R.color.card_favorite);
 
             // 將結合資料後的 stockAdapter 加入 RecyclerView物件中
-            recyclerView.setAdapter(myAdapter);
+            recyclerView.setAdapter(adapter);
             swipeRefreshLayout.setEnabled(true);
             swipeRefreshLayout.setRefreshing(false);
 
@@ -186,7 +186,7 @@ public class MemberFavoriteActivity extends AppCompatActivity {
             showFoundStatus();
             books = null;
 
-            progressBar.setVisibility(View.GONE);
+            prgBar.setVisibility(View.GONE);
             canShowFavorite = true;
 
         }catch (NullPointerException npe) {

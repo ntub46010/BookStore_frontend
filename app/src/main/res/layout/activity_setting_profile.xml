@@ -178,7 +178,8 @@
                         <EditText
                             android:id="@+id/edtOldPwd"
                             style="@style/edt_set_profile"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"/>
                     </TableRow>
 
                     <TableRow
@@ -190,7 +191,8 @@
                         <EditText
                             android:id="@+id/edtNewPwd"
                             style="@style/edt_set_profile"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"/>
                     </TableRow>
 
                     <TableRow
@@ -202,7 +204,8 @@
                         <EditText
                             android:id="@+id/edtNewPwd2"
                             style="@style/edt_set_profile"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"/>
                     </TableRow>
 
                 </TableLayout>

@@ -54,7 +54,7 @@ public class ProductEditActivity extends AppCompatActivity {
     private boolean isShown = false;
 
     private RecyclerView recyclerView;
-    private ImageQueueAdapter myAdapter;
+    private ImageQueueAdapter adapter;
     private ArrayList<ImageObject> images = new ArrayList<>();
     private int itemIndex, itemAmount;
 
@@ -143,14 +143,14 @@ public class ProductEditActivity extends AppCompatActivity {
                 count = 0; //新圖片上傳計數
                 ImageObject image;
 
-                image = myAdapter.getItem(0);
+                image = adapter.getItem(0);
                 if (image.getBitmap() == null) { //檢查是否至少有一張圖片
                     Toast.makeText(context, "未選擇圖片", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                for (int i=0; i<myAdapter.getItemCount(); i++) { //計算新圖片數量
-                    image = myAdapter.getItem(i);
+                for (int i = 0; i< adapter.getItemCount(); i++) { //計算新圖片數量
+                    image = adapter.getItem(i);
                     if (image.isEntity())
                         itemAmount++;
                 }
@@ -161,8 +161,8 @@ public class ProductEditActivity extends AppCompatActivity {
                     return;
                 }
 
-                for (int i=0; i<myAdapter.getItemCount(); i++) { //尋找第一張新圖片在陣列的索引
-                    final ImageObject newImage = myAdapter.getItem(i);
+                for (int i = 0; i< adapter.getItemCount(); i++) { //尋找第一張新圖片在陣列的索引
+                    final ImageObject newImage = adapter.getItem(i);
                     if (newImage.isEntity()) {
                         itemIndex = i;
                         //開始上傳
@@ -246,30 +246,30 @@ public class ProductEditActivity extends AppCompatActivity {
             /*case ImageQueueAdapter.REQUEST_CAMERA:
                 break;*/
             case ImageQueueAdapter.REQUEST_ALBUM:
-                if (!myAdapter.createImageFile())
+                if (!adapter.createImageFile())
                     return;
                 if (selectedImageUri != null)
-                    myAdapter.cropImage(selectedImageUri);
+                    adapter.cropImage(selectedImageUri);
 
                 break;
             case ImageQueueAdapter.REQUEST_CROP:
-                final int position = myAdapter.getPressedPosition();
+                final int position = adapter.getPressedPosition();
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        ImageObject image = myAdapter.getItem(position);
+                        ImageObject image = adapter.getItem(position);
                         boolean isEmptyCard = image.getBitmap() == null;
                         boolean bitmapIsNull = true;
                         do {
-                            bitmapIsNull = myAdapter.mImageFileToBitmap(image);
+                            bitmapIsNull = adapter.mImageFileToBitmap(image);
                         } while (bitmapIsNull);
 
                         image.setEntity(true);
-                        myAdapter.setItem(position, image);
+                        adapter.setItem(position, image);
 
-                        if (isEmptyCard && myAdapter.getItemCount() < 5) {
+                        if (isEmptyCard && adapter.getItemCount() < 5) {
                             Bitmap bitmap = null;
-                            myAdapter.addItem(new ImageObject(bitmap, false)); //再新增一張空白圖
+                            adapter.addItem(new ImageObject(bitmap, false)); //再新增一張空白圖
                         }
 
                     }
@@ -439,10 +439,10 @@ public class ProductEditActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         // 產生一個 MyAdapter物件, 連結將加入的資料
-        myAdapter = new ImageQueueAdapter(context, pictures, this);
+        adapter = new ImageQueueAdapter(context, pictures, this);
 
         // 將結合資料後的 stockAdapter 加入 RecyclerView物件中
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(adapter);
         pictures = null;
     }
 
@@ -513,9 +513,9 @@ public class ProductEditActivity extends AppCompatActivity {
             }else {
                 initTrdWaitPhoto(false);
                 //寫入檔名
-                ImageObject image = myAdapter.getItem(itemIndex);
+                ImageObject image = adapter.getItem(itemIndex);
                 image.setFileName(fileName);
-                myAdapter.setItem(itemIndex, image);
+                adapter.setItem(itemIndex, image);
 
                 //上傳下一張
                 itemIndex++;
@@ -524,8 +524,8 @@ public class ProductEditActivity extends AppCompatActivity {
                     postProduct();
                     return;
                 }
-                for (int i=itemIndex; i<myAdapter.getItemCount(); i++) { //新增的圖片可能穿插，需要逐一確認
-                    final ImageObject newImage = myAdapter.getItem(i);
+                for (int i = itemIndex; i< adapter.getItemCount(); i++) { //新增的圖片可能穿插，需要逐一確認
+                    final ImageObject newImage = adapter.getItem(i);
                     if (newImage.getBitmap() != null) {
                         new Thread(new Runnable() {
                             public void run() {
@@ -539,7 +539,6 @@ public class ProductEditActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                //Toast.makeText(context, "B開始上傳第 " + String.valueOf(count), Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -576,8 +575,8 @@ public class ProductEditActivity extends AppCompatActivity {
         // (2)向主機網址發出資料請求
         try {
             String[] fileName = new String[5];
-            for (int i=0; i<myAdapter.getItemCount(); i++)
-                fileName[i] = myAdapter.getItem(i).getFileName();
+            for (int i = 0; i< adapter.getItemCount(); i++)
+                fileName[i] = adapter.getItem(i).getFileName();
             for (int i=0; i<5; i++) {
                 if (fileName[i] == null)
                     fileName[i] = "";

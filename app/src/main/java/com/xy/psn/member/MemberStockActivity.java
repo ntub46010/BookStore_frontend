@@ -44,7 +44,7 @@ public class MemberStockActivity extends AppCompatActivity {
     private ListView lstProduct;
     private ImageView imgNotFound;
     private TextView txtNotFound;
-    private ArrayList<ImageObj> products;
+    private ArrayList<ImageObj> books;
     public static StockListAdapter stockAdapter = null;
     private SwipeRefreshLayout swipeRefreshLayout;
     private String bookId, bookTitle;
@@ -103,11 +103,6 @@ public class MemberStockActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
         MyHelper.isStockDisplayAlive = true;
@@ -159,7 +154,7 @@ public class MemberStockActivity extends AppCompatActivity {
             prgBar.setVisibility(View.VISIBLE);
             lstProduct.setVisibility(View.GONE);
 
-            products = new ArrayList<>();
+            books = new ArrayList<>();
 
             // (1)宣告一個處理資料取回後, 處理回傳JSON格式資料的物件.
             tasks[0] = new MyAsyncTask(context, new MyAsyncTask.TaskListener() {
@@ -174,7 +169,7 @@ public class MemberStockActivity extends AppCompatActivity {
                         // 將由主機取回的JSONArray內容生成Book物件, 再加入ArrayList物件中
                         JSONArray jsonArray = new JSONArray(modifyJSON(result));
                         for (int i=0; i<jsonArray.length(); i++) {
-                            products.add(new Book(
+                            books.add(new Book(
                                     jsonArray.getJSONObject(i).getString("Id"),
                                     getString(R.string.image_link) + jsonArray.getJSONObject(i).getString("Photo"),
                                     jsonArray.getJSONObject(i).getString("Title"),
@@ -188,7 +183,7 @@ public class MemberStockActivity extends AppCompatActivity {
                     }
 
                     // 產生物件ArrayList資料後, 由圖片位址下載圖片, 完成後再顯示資料.
-                    GetBitmap getBitmap = new GetBitmap(context, products, new GetBitmap.TaskListener() {
+                    GetBitmap getBitmap = new GetBitmap(context, books, new GetBitmap.TaskListener() {
                         // 下載圖片完成後執行的方法
                         @Override
                         public void onFinished() {
@@ -211,7 +206,7 @@ public class MemberStockActivity extends AppCompatActivity {
         try {
             prgBar.setVisibility(View.GONE);
             lstProduct.setVisibility(View.VISIBLE);
-            stockAdapter = new StockListAdapter(context, products, R.layout.spn_chat_product);
+            stockAdapter = new StockListAdapter(context, books, R.layout.spn_chat_product);
             stockAdapter.setBackgroundColor(getResources(), R.color.lst_stock);
             lstProduct.setAdapter(stockAdapter);
             registerForContextMenu(lstProduct);
@@ -219,7 +214,7 @@ public class MemberStockActivity extends AppCompatActivity {
             swipeRefreshLayout.setEnabled(true);
             swipeRefreshLayout.setRefreshing(false);
 
-            if (products.isEmpty()) {
+            if (books.isEmpty()) {
                 txtNotFound.setText("沒有上架商品");
                 txtNotFound.setVisibility(View.VISIBLE);
                 imgNotFound.setImageResource(getNotFoundImg());
@@ -228,7 +223,7 @@ public class MemberStockActivity extends AppCompatActivity {
                 txtNotFound.setText("");
                 imgNotFound.setVisibility(View.GONE);
             }
-            products = null;
+            books = null;
             canShowShelf = true;
             isStockShown = true;
 
@@ -244,7 +239,7 @@ public class MemberStockActivity extends AppCompatActivity {
             public void onFinished(String result) {
                 try{
                     if (result == null) {
-                        Toast.makeText(context, "已被交談過，還不能刪", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "連線逾時", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     if (result.contains("Success")) {
@@ -264,7 +259,7 @@ public class MemberStockActivity extends AppCompatActivity {
         });
 
         // (2)向主機網址發出取回資料請求
-        tasks[1].execute("http://140.131.115.73/delete_product?bookid=" + productId);
+        tasks[1].execute(getString(R.string.delete_product_link, productId));
     }
 
     private void prepareDialog() {

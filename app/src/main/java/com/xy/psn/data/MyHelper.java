@@ -25,10 +25,10 @@ import static com.xy.psn.MainActivity.txtBarTitle;
 
 public class MyHelper {
     public static String loginUserId = "";
-    public static String myAvatar = "";
-    public static String myName = "";
-    public static int gender = -1;
-    public static String tmpToken = "token";
+    public static String myAvatar = ""; //用於發送推播
+    public static String myName = ""; //用於發送推播
+    public static int gender = -1; //用於發送icon，包含從信箱退出時的狀況
+    public static String tmpToken = "token"; //登入時接收自己token(確認Firebase註冊成功)，或進交談室時接收對方token(確認可推播)
 
     public static boolean fromNotification = true;
     public static boolean fromClickDep = true;

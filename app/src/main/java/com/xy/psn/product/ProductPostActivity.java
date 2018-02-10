@@ -49,13 +49,13 @@ public class ProductPostActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<ImageObject> images = new ArrayList<>();
-    private ImageQueueAdapter myAdapter;
+    private ImageQueueAdapter queueAdapter;
     private int itemIndex, itemAmount;
 
     private EditText edtTitle, edtStatus, edtPrice, edtPS;
     private CheckBox chkAI, chkFN, chkFT, chkIB, chkBM, chkIM, chkAF, chkCD, chkCC, chkDM, chkGN;
     private Spinner spnNote;
-    private String title, dep = "", status, note, price, ps;
+    private String title, dep = "", condition, note, price, ps;
 
     private MyAsyncTask uploadTask = null;
     private ImageUploadTask imageTask = null;
@@ -119,7 +119,7 @@ public class ProductPostActivity extends AppCompatActivity {
                     return;
 
                 itemIndex = 0;
-                itemAmount = myAdapter.getEntityAmount();
+                itemAmount = queueAdapter.getEntityAmount();
 
                 if (itemAmount == 0) {
                     Toast.makeText(context, "未選擇圖片", Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class ProductPostActivity extends AppCompatActivity {
                 //Toast.makeText(context, "判定有" + String.valueOf(itemAmount) + "張真圖", Toast.LENGTH_SHORT).show();
 
                 for (int i=itemIndex; i<itemAmount; i++) {
-                    final ImageObject newImage = myAdapter.getItem(i);
+                    final ImageObject newImage = queueAdapter.getItem(i);
                     if (newImage.getBitmap() != null) {
                         //開始上傳
                         new Thread(new Runnable() {
@@ -159,8 +159,8 @@ public class ProductPostActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        myAdapter = new ImageQueueAdapter(context, images, this);
-        recyclerView.setAdapter(myAdapter);
+        queueAdapter = new ImageQueueAdapter(context, images, this);
+        recyclerView.setAdapter(queueAdapter);
         images = null;
 
         dialog = new Dialog(context);
@@ -200,7 +200,7 @@ public class ProductPostActivity extends AppCompatActivity {
             case 0:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     //取得權限，進行檔案存取
-                    myAdapter.pickImageDialog();
+                    queueAdapter.pickImageDialog();
                 }else {
                     //使用者拒絕權限，停用檔案存取功能，並顯示訊息
                     Toast.makeText(context, "權限不足，無法選擇圖片", Toast.LENGTH_SHORT).show();
@@ -217,30 +217,30 @@ public class ProductPostActivity extends AppCompatActivity {
         Uri selectedImageUri = data.getData();
         switch (requestCode) {
             case REQUEST_ALBUM:
-                if (!myAdapter.createImageFile())
+                if (!queueAdapter.createImageFile())
                     return;
                 if (selectedImageUri != null)
-                    myAdapter.cropImage(selectedImageUri);
+                    queueAdapter.cropImage(selectedImageUri);
 
                 break;
             case REQUEST_CROP:
-                final int position = myAdapter.getPressedPosition();
+                final int position = queueAdapter.getPressedPosition();
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        ImageObject image = myAdapter.getItem(position);
+                        ImageObject image = queueAdapter.getItem(position);
                         boolean isEmptyCard = image.getBitmap() == null;
                         boolean bitmapIsNull = true;
                         do {
-                            bitmapIsNull = myAdapter.mImageFileToBitmap(image);
+                            bitmapIsNull = queueAdapter.mImageFileToBitmap(image);
                         } while (bitmapIsNull);
 
                         image.setEntity(true);
-                        myAdapter.setItem(position, image);
+                        queueAdapter.setItem(position, image);
 
-                        if (isEmptyCard && myAdapter.getItemCount() < 5) {
+                        if (isEmptyCard && queueAdapter.getItemCount() < 5) {
                             Bitmap bitmap = null;
-                            myAdapter.addItem(new ImageObject(bitmap, false)); //再新增一張空白圖
+                            queueAdapter.addItem(new ImageObject(bitmap, false)); //再新增一張空白圖
                         }
                     }
                 }).start();
@@ -252,7 +252,7 @@ public class ProductPostActivity extends AppCompatActivity {
 
     private boolean isInfoValid() {
         title = edtTitle.getText().toString();
-        status = edtStatus.getText().toString();
+        condition = edtStatus.getText().toString();
         price = edtPrice.getText().toString();
         ps = edtPS.getText().toString();
         dep = "";
@@ -278,7 +278,7 @@ public class ProductPostActivity extends AppCompatActivity {
             dep = dep.substring(0, dep.length() - 1);
         }
 
-        if (status.equals("")) errMsg += "書況\n";
+        if (condition.equals("")) errMsg += "書況\n";
         if (note.equals("請選擇") || note.equals("")) errMsg += "筆記提供方式\n";
         if (price.equals(""))
             errMsg += "價格\n"; //EditText已限制只能輸入>=0的整數，就算複製其他文字過來也能過濾掉
@@ -307,9 +307,9 @@ public class ProductPostActivity extends AppCompatActivity {
             }else {
                 initTrdWaitPhoto(false);
                 //寫入檔名
-                ImageObject image = myAdapter.getItem(itemIndex);
+                ImageObject image = queueAdapter.getItem(itemIndex);
                 image.setFileName(fileName);
-                myAdapter.setItem(itemIndex, image);
+                queueAdapter.setItem(itemIndex, image);
 
                 //上傳下一張
                 itemIndex++;
@@ -317,7 +317,7 @@ public class ProductPostActivity extends AppCompatActivity {
                     postProduct();
                     return;
                 }
-                final ImageObject newImage = myAdapter.getItem(itemIndex);
+                final ImageObject newImage = queueAdapter.getItem(itemIndex);
                 new Thread(new Runnable() {
                     public void run() {
                         imageTask = new ImageUploadTask(context, getString(R.string.upload_image_link));
@@ -376,7 +376,7 @@ public class ProductPostActivity extends AppCompatActivity {
         try {
             String[] fileName = new String[5];
             for (int i=0; i<itemAmount; i++)
-                fileName[i] = myAdapter.getItem(i).getFileName();
+                fileName[i] = queueAdapter.getItem(i).getFileName();
             for (int i=0; i<5; i++) {
                 if (fileName[i] == null)
                     fileName[i] = "";
@@ -385,7 +385,7 @@ public class ProductPostActivity extends AppCompatActivity {
                     loginUserId,
                     URLEncoder.encode(title, "UTF-8"),
                     URLEncoder.encode(dep, "UTF-8"),
-                    URLEncoder.encode(status, "UTF-8"),
+                    URLEncoder.encode(condition, "UTF-8"),
                     URLEncoder.encode(note, "UTF-8"),
                     price,
                     URLEncoder.encode(ps, "UTF-8"),

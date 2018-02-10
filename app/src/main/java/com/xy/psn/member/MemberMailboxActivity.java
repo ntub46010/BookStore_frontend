@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.xy.psn.MainActivity;
 import com.xy.psn.R;
-import com.xy.psn.adapter.MailLIstAdapter;
+import com.xy.psn.adapter.MailListAdapter;
 import com.xy.psn.async_helper.GetBitmap;
 import com.xy.psn.async_helper.ImageObj;
 import com.xy.psn.async_helper.MyAsyncTask;
@@ -46,7 +46,7 @@ public class MemberMailboxActivity extends AppCompatActivity {
     private TextView txtNotFound;
     private ArrayList<ImageObj> chats;
     private MyAsyncTask mailTask;
-    private ProgressBar progressBar;
+    private ProgressBar prgBar;
     private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
@@ -87,8 +87,8 @@ public class MemberMailboxActivity extends AppCompatActivity {
             }
         });
 
-        progressBar = (ProgressBar) findViewById(R.id.prgMailbox);
-        progressBar.setVisibility(View.VISIBLE);
+        prgBar = (ProgressBar) findViewById(R.id.prgMailbox);
+        prgBar.setVisibility(View.VISIBLE);
         txtNotFound = (TextView) findViewById(R.id.txtNotFound);
         imgNotFound = (ImageView) findViewById(R.id.imgNotFound);
         imgNotFound.setVisibility(View.GONE);
@@ -171,7 +171,7 @@ public class MemberMailboxActivity extends AppCompatActivity {
     private void showData () {
         try {
             ListView listView = (ListView) findViewById(R.id.lstMails);
-            final MailLIstAdapter adapter = new MailLIstAdapter(context, chats);
+            final MailListAdapter adapter = new MailListAdapter(context, chats);
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -203,7 +203,7 @@ public class MemberMailboxActivity extends AppCompatActivity {
             }
             chats = null;
 
-            progressBar.setVisibility(View.GONE);
+            prgBar.setVisibility(View.GONE);
             canShowMail = true;
             //isProductHomeShown = true;
         }catch (NullPointerException npe) {

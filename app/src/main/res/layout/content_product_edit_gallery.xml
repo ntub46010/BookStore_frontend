@@ -10,7 +10,7 @@
 
     <TextView
         style="@style/txt_goods_detail_title"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="5dp"
         android:text="書籍圖片：" />
 
     <TextView

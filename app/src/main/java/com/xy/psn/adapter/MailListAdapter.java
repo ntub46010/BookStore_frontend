@@ -20,14 +20,14 @@ import com.xy.psn.member.MemberChatActivity;
 
 import java.util.ArrayList;
 
-public class MailLIstAdapter extends BaseAdapter{
+public class MailListAdapter extends BaseAdapter{
     private Context context;
     private Resources resources = null;
     private LayoutInflater layoutInflater;
     private ArrayList<ImageObj> mails;
     private int backgroundColor;
 
-    public MailLIstAdapter (Context context, ArrayList<ImageObj> mails) {
+    public MailListAdapter(Context context, ArrayList<ImageObj> mails) {
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
         this.mails = mails;

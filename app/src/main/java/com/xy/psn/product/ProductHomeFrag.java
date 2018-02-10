@@ -41,7 +41,7 @@ import static com.xy.psn.data.MyHelper.modifyJSON;
 import static com.xy.psn.data.MyHelper.setBoardTitle;
 
 public class ProductHomeFrag extends Fragment {
-    public static ProgressBar progressBar;
+    public static ProgressBar prgBar;
     public static RecyclerView recyclerView;
     private ImageView imgNotFound;
     private TextView txtNotFound;
@@ -55,15 +55,14 @@ public class ProductHomeFrag extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.frag_goods_home, container, false);
+        return inflater.inflate(R.layout.frag_product_home, container, false);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setBoardTitle();
-        progressBar = (ProgressBar) getView().findViewById(R.id.prgBar);
-        recyclerView = (RecyclerView) getView().findViewById(R.id.recy_books);
+        prgBar = (ProgressBar) getView().findViewById(R.id.prgBar);
 
         swipeRefreshLayout = (SwipeRefreshLayout) getView().findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_light);
@@ -116,7 +115,7 @@ public class ProductHomeFrag extends Fragment {
             productTask.cancel(true); //太快去點選其他畫面會有NPE
         }catch (NullPointerException e) {}
         canShowProduct = true;
-        progressBar.setVisibility(View.GONE);
+        prgBar.setVisibility(View.GONE);
 
         try { //注意：回到桌面也會執行這裡，而停止執行緒
             myAdapter.setCanCheckLoop(false);
@@ -141,7 +140,7 @@ public class ProductHomeFrag extends Fragment {
             fromClickDep = false;
 
             swipeRefreshLayout.setEnabled(false);
-            progressBar.setVisibility(View.VISIBLE);
+            prgBar.setVisibility(View.VISIBLE);
             //recyclerView.setVisibility(View.INVISIBLE); //不能寫在這，會NPE
 
             // 產生將顯示的資料
@@ -223,7 +222,7 @@ public class ProductHomeFrag extends Fragment {
             showFoundStatus();
             books = null;
 
-            progressBar.setVisibility(View.GONE);
+            prgBar.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
             canShowProduct = true;
             isProductHomeShown = true;

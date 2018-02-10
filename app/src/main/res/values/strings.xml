@@ -10,30 +10,31 @@
     <string name="sp_showNotification">showNotification</string>
     <string name="sp_isFirstUse">isFirstUse</string>
 
-    <string name="firebase_server_key" translatable="false">key=AAAA</string>
-    <string name="image_link">http://127.0.0.1/images/</string>
-    <string name="avatar_link">http://127.0.0.1/avatars/</string>
-    <string name="upload_image_link">http://127.0.0.1/upload_images/</string>
-    <string name="upload_avatar_link">http://127.0.0.1/upload_avatars/?userid=%1$s</string>
+    <string name="firebase_server_key" translatable="false">key=AAAAgo8ady8:APA91bH_84tpRjr_bxB0F4vOAzrCB8pbzhjq8cFt-a8VDbCagHBa-UZNPu6XzJVU0JL1qjGRqzTeZ30g1mnj0NAvMY8_qZgU-wVqXRv2x7dGYjTh2wlKrgrB820_MBG3_u8xUFNyzXUL</string>
+    <string name="image_link">http://111.250.22.24/images/</string>
+    <string name="avatar_link">http://111.250.22.24/avatars/</string>
+    <string name="upload_image_link">http://111.250.22.24/upload_images/</string>
+    <string name="upload_avatar_link">http://111.250.22.24/upload_avatars/?userid=%1$s</string>
 
-    <string name="register_link">http://127.0.0.1/register?userid=%1$s\u0026pwd=%2$s\u0026name=%3$s\u0026email=%4$s\u0026gender=%5$s\u0026department=%6$s</string>
-    <string name="login_link">http://127.0.0.1/login?userid=%1$s\u0026pwd=%2$s</string>
-    <string name="chat_product_link">http://127.0.0.1/chat_product?userid=%1$s\u0026memberid=%2$s</string>
-    <string name="chat_conversation_link">http://127.0.0.1/chat_conversation?userid=%1$s\u0026memberid=%2$s\u0026bookid=%3$s</string>
-    <string name="product_detail_link">http://127.0.0.1/product_detail?bookid=%1$s\u0026full=%2$s</string>
-    <string name="send_message_link">http://127.0.0.1/send_message?userid=%1$s\u0026memberid=%2$s\u0026bookid=%3$s\u0026msg=%4$s</string>
-    <string name="favorite_link">http://127.0.0.1/favorite?memberid=%1$s</string>
-    <string name="mailbox_link">http://127.0.0.1/mailbox?memberid=%1$s</string>
-    <string name="profile_info_link">http://127.0.0.1/profile_info?memberid=%1$s</string>
-    <string name="check_evaluation_link">http://127.0.0.1/check_evaluation?userid=%1$s\u0026memberid=%2$s</string>
-    <string name="profile_shelf_link">http://127.0.0.1/profile_shelf?memberid=%1$s</string>
-    <string name="evaluate_member_link">http://127.0.0.1/evaluate_member?userid=%1$s\u0026memberid=%2$s\u0026value=%3$s</string>
-    <string name="product_home_link">http://127.0.0.1/product_home?type=%1$s\u0026keyword=%2$s</string>
-    <string name="post_product_link">http://127.0.0.1/post_product?userid=%1$s\u0026title=%2$s\u0026type=%3$s\u0026condition=%4$s\u0026note=%5$s\u0026price=%6$s\u0026ps=%7$s\u0026photo=%8$s\u0026photo2=%9$s\u0026photo3=%10$s\u0026photo4=%11$s\u0026photo5=%12$s</string>
-    <string name="check_favorite_link">http://127.0.0.1/check_favorite?userid=%1$s\u0026bookid=%2$s</string>
-    <string name="add_favorite_link">http://127.0.0.1/add_favorite?userid=%1$s\u0026bookid=%2$s</string>
-    <string name="update_product_link">http://127.0.0.1/update_product?bookid=%1$s\u0026title=%2$s\u0026type=%3$s\u0026condition=%4$s\u0026note=%5$s\u0026price=%6$s\u0026ps=%7$s\u0026photo=%8$s\u0026photo2=%9$s\u0026photo3=%10$s\u0026photo4=%11$s\u0026photo5=%12$s</string>
-    <string name="update_profile_info_link">http://127.0.0.1/update_profile_info?memberid=%1$s\u0026name=%2$s\u0026department=%3$s\u0026avatar=%4$s\u0026email=%5$s\u0026pwd=%6$s</string>
+    <string name="register_link">http://111.250.22.24/register?userid=%1$s\u0026pwd=%2$s\u0026name=%3$s\u0026email=%4$s\u0026gender=%5$s\u0026department=%6$s</string>
+    <string name="login_link">http://111.250.22.24/login?userid=%1$s\u0026pwd=%2$s</string>
+    <string name="chat_product_link">http://111.250.22.24/chat_product?userid=%1$s\u0026memberid=%2$s</string>
+    <string name="chat_conversation_link">http://111.250.22.24/chat_conversation?userid=%1$s\u0026memberid=%2$s\u0026bookid=%3$s</string>
+    <string name="product_detail_link">http://111.250.22.24/product_detail?bookid=%1$s\u0026full=%2$s</string>
+    <string name="send_message_link">http://111.250.22.24/send_message?userid=%1$s\u0026memberid=%2$s\u0026bookid=%3$s\u0026msg=%4$s</string>
+    <string name="favorite_link">http://111.250.22.24/favorite?memberid=%1$s</string>
+    <string name="mailbox_link">http://111.250.22.24/mailbox?memberid=%1$s</string>
+    <string name="profile_info_link">http://111.250.22.24/profile_info?memberid=%1$s</string>
+    <string name="check_evaluation_link">http://111.250.22.24/check_evaluation?userid=%1$s\u0026memberid=%2$s</string>
+    <string name="profile_shelf_link">http://111.250.22.24/profile_shelf?memberid=%1$s</string>
+    <string name="evaluate_member_link">http://111.250.22.24/evaluate_member?userid=%1$s\u0026memberid=%2$s\u0026value=%3$s</string>
+    <string name="product_home_link">http://111.250.22.24/product_home?type=%1$s\u0026keyword=%2$s</string>
+    <string name="post_product_link">http://111.250.22.24/post_product?userid=%1$s\u0026title=%2$s\u0026type=%3$s\u0026condition=%4$s\u0026note=%5$s\u0026price=%6$s\u0026ps=%7$s\u0026photo=%8$s\u0026photo2=%9$s\u0026photo3=%10$s\u0026photo4=%11$s\u0026photo5=%12$s</string>
+    <string name="check_favorite_link">http://111.250.22.24/check_favorite?userid=%1$s\u0026bookid=%2$s</string>
+    <string name="add_favorite_link">http://111.250.22.24/add_favorite?userid=%1$s\u0026bookid=%2$s</string>
+    <string name="update_product_link">http://111.250.22.24/update_product?bookid=%1$s\u0026title=%2$s\u0026type=%3$s\u0026condition=%4$s\u0026note=%5$s\u0026price=%6$s\u0026ps=%7$s\u0026photo=%8$s\u0026photo2=%9$s\u0026photo3=%10$s\u0026photo4=%11$s\u0026photo5=%12$s</string>
+    <string name="delete_product_link">http://111.250.22.24/delete_product?bookid=%1$s</string>
+    <string name="update_profile_info_link">http://111.250.22.24/update_profile_info?memberid=%1$s\u0026name=%2$s\u0026department=%3$s\u0026avatar=%4$s\u0026email=%5$s\u0026pwd=%6$s</string>
 
     <string name="post_product_photo_hint">可選五張圖，第一張將做為預覽，長按可調整順序</string>
     <string name="edit_product_photo_hint">可選五張圖，第一張將做為預覽，長按可調整順序</string>
