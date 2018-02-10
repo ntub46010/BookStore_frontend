@@ -1,5 +1,7 @@
 # BookStore_frontend
-大學專題製作的Android APP，完整版第一版，後端為Node.js
+大學專題製作的Android APP，完整版第一版，後端為Node.js。<br>
+之後打算將連線方式從AsyncTask改為OKHttp，並整理雜亂的程式碼。<br>
+前陣子在開發將後端改為Tomcat後，以此為基礎的前端APP。連結：https://github.com/ntub46010/ShareMe_Tomcat
 
 ## 登入畫面
 主程式：LoginActivity<br>
@@ -12,7 +14,7 @@
 
 ## 首頁
 主程式：MainActivity、DepartmentFrag、ProductHomeFrag、MemberHomeFrag、SettingFrag<br>
-說明：由4個Fragment呈現主要功能，可左右滑動切換。點選各個科系能查看該分類的商品。商品首頁上方的放大鏡圖案是搜尋功能。
+說明：由4個Fragment呈現主要功能，可左右滑動切換。點選各個科系能查看該分類的商品。商品首頁上方的放大鏡圖案是搜尋功能。設定的通知開關是控制推播通知的顯示。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%A7%91%E7%B3%BB.png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E9%A6%96%E9%A0%81.png" height="24%" width="24%" />
@@ -31,7 +33,7 @@
 
 ## 刊登商品
 主程式：ProductPostActivity<br>
-說明：從手機圖庫中選取照片，依固定長寬比例裁切，最多選5張。並填寫書名、價格、筆記等資料。
+說明：從手機圖庫中選取照片，依固定長寬比例裁切，最多選5張。並填寫書名、價格、筆記等資料，以及所要刊登在的分類(可複選)。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%88%8A%E7%99%BB%E5%95%86%E5%93%81(%E7%A9%BA%E7%99%BD).png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%88%8A%E7%99%BB%E5%95%86%E5%93%81(%E8%A3%81%E5%9C%96).png" height="24%" width="24%" />
@@ -45,7 +47,6 @@
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%851.png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%852.png" height="24%" width="24%" />
-<img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%853.png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%85(%E5%9C%96%E7%89%87%E7%B8%AE%E6%94%BE).png" height="24%" width="24%" />
 </td></tr></table>
 
