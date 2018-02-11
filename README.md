@@ -13,7 +13,7 @@
 </td></tr></table>
 
 ## 首頁
-主程式：MainActivity、DepartmentFrag、ProductHomeFrag、MemberHomeFrag、SettingFrag<br>
+主程式：MainActivity、DepartmentFrag、ProductHomeFrag、MemberHomeFrag、SettingHomeFrag<br>
 說明：由4個Fragment呈現主要功能，可左右滑動切換。點選各個科系能查看該分類的商品。商品首頁上方的放大鏡圖案是搜尋功能。設定的通知開關是控制推播通知的顯示。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%A7%91%E7%B3%BB.png" height="24%" width="24%" />
@@ -52,7 +52,7 @@
 
 ## 個人檔案
 主程式：MemberProfileActivity<br>
-說明：顯示個人基本資料，如大頭照、姓名、科系、聯絡信箱與評價。點擊信封圖案可開啟Email軟體，寄信給對方。點擊評價圖案可給予對方正評或負評，或者撤回。
+說明：顯示個人基本資料，如大頭照、姓名、科系與上架商品。點擊信封圖案可開啟Email軟體，寄信給對方。點擊評價圖案可給予對方正評或負評，或者撤回。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E8%87%AA%E5%B7%B1).png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E8%B3%A3%E5%AE%B6).png" height="24%" width="24%" />
@@ -70,7 +70,7 @@
 
 ## 交談室
 主程式：MemberChatActivity<br>
-說明：買賣雙方對話的地方，在此洽談交易事宜。點擊中上方選單可切換到其他談過的商品。點擊右上方人形圖案開啟對方個人檔案。點擊包裝袋圖案則出現半透明背景的商品詳情。
+說明：買賣雙方對話的地方，在此洽談交易事宜。點擊右上方手提袋圖案將出現半透明背景的商品詳情。點擊人形圖案開啟對方個人檔案。點擊中上方選單則可切換到其他談過的商品。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E4%BA%A4%E8%AB%87%E5%AE%A41.png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E4%BA%A4%E8%AB%87%E5%AE%A4(%E7%9C%8B%E5%95%86%E5%93%81).png" height="24%" width="24%" />
@@ -100,8 +100,8 @@
 <table>
 <tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%95%86%E5%93%81.png" height="24%" width="24%" />
-<img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%85(%E7%B7%A8%E8%BC%AF%E5%BE%8C).png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%95%86%E5%93%81(%E5%8B%95%E5%9C%96%E7%89%87).png" height="24%" width="24%" />
+<img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E5%95%86%E5%93%81%E8%A9%B3%E6%83%85(%E7%B7%A8%E8%BC%AF%E5%BE%8C).png" height="24%" width="24%" />
 </td></tr>
 </table>
 
@@ -118,6 +118,7 @@
 說明：編輯個人基本資料，包含姓名、科系、Email、大頭照與登入密碼。
 <table><tr><td>
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E8%B5%B7%E5%88%9D).png" height="24%" width="24%" />
+<img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E5%A4%A7%E9%A0%AD%E7%85%A7).png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E5%AF%86%E7%A2%BC%E9%8C%AF%E8%AA%A4).png" height="24%" width="24%" />
 <img src="https://github.com/ntub46010/Photos/blob/master/BookStore%E6%93%8D%E4%BD%9C%E7%95%AB%E9%9D%A2/%E7%B7%A8%E8%BC%AF%E5%80%8B%E4%BA%BA%E6%AA%94%E6%A1%88(%E4%B8%8A%E5%82%B3).png" height="24%" width="24%" />
 </td></tr></table>
